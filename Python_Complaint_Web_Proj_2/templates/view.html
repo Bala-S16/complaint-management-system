@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Complaints</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #f7f9fc;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            border: none;
+            border-radius: 15px;
+        }
+        .card-title {
+            font-weight: bold;
+        }
+        .card-subtitle {
+            font-size: 0.9rem;
+            color: #888;
+        }
+        .back-btn {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">📋 All Complaints</h2>
+
+        {% if complaints %}
+            <div class="row">
+                {% for c in complaints %}
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card p-3 h-100">
+                            <h5 class="card-title">{{ c.name }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Complaint ID: {{ c.id }}</h6>
+                            <p class="card-text">{{ c.complaint }}</p>
+                            <small class="text-muted">Submitted on {{ c.time }}</small>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="alert alert-warning text-center" role="alert">
+                No complaints found.
+            </div>
+        {% endif %}
+
+        <div class="text-center back-btn">
+            <a href="/" class="btn btn-secondary">⬅️ Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

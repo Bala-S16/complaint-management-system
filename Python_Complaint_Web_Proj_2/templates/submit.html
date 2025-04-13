@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit Complaint</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #f7f9fc;
+        }
+        .form-container {
+            margin-top: 50px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        .back-link {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container col-md-6 mt-5">
+        <div class="form-container">
+            <h3 class="text-center mb-4">📝 Submit a Complaint</h3>
+            <form method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="complaint">Your Complaint</label>
+                    <textarea class="form-control" id="complaint" name="complaint" rows="5" required placeholder="Write your complaint here..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Submit</button>
+            </form>
+            <a href="/" class="btn btn-secondary back-link">⬅️ Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
